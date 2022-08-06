@@ -12,8 +12,9 @@ pipeline{
             steps{
               sh "gradle build"
             }
-        }
-        post{
+        }        
+    }
+    post{
         always{
             addBadge icon: 'zine', id: 'zine', link: 'zine', text: 'zine'
         }
@@ -23,6 +24,5 @@ pipeline{
         failure{
             addBadge icon: 'zinefailure', id: 'zinefailure', link: 'zinefailure', text: 'zinefailure'
         }
-    }
     }
 }
